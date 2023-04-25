@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>网站说明</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="../images/YanZi.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="计算机科学与技术，燕山大学">
+    <meta name="description" content="我与计科，燕大给了我们机会相遇">
+    <meta name="author" content="十罐雪碧">
+</head>
+<style>
+.slideshow-container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slideshow-container img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideshow-container{
+    transform:translateX(-100%);
+    transition: all 1.5s;
+}
+
+.slideshow-container{
+    transform:translateX(100%);
+    transition: all 1.5s;
+}
+
+.slideshow-slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slideshow-slide.active {
+    display: block;
+}
+
+</style>
+<body>
+
+    <div class="slideshow-container">
+        <div class="slideshow-slide">
+          <img src="../images/duyipeng.jpg" alt="Slide 1">
+        </div>
+        <div class="slideshow-slide">
+          <img src="../images/quanbu.jpg" alt="Slide 2">
+        </div>
+        <div class="slideshow-slide">
+          <img src="../images/shouye.jpg" alt="Slide 3">
+        </div>
+      </div>
+    <script>
+        window.onload = function(){
+            const slides = document.querySelectorAll('.slideshow-slide');
+            let currentSlide = 0;
+            let isPaused = false;
+
+            function showSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            let slideInterval = setInterval(nextSlide, 3000);
+
+            const slideshowContainer = document.querySelector('.slideshow-container');
+            slideshowContainer.addEventListener('mouseenter', function() {
+                clearInterval(slideInterval);
+                isPaused = true;
+            });
+
+            slideshowContainer.addEventListener('mouseleave', function() {
+                if (isPaused) {
+                    slideInterval = setInterval(nextSlide, 3000);
+                    isPaused = false;
+                }
+            });
+        }
+       
+
+    </script>
+</body>
+</html>

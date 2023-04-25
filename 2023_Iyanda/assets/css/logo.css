@@ -1,0 +1,71 @@
+/* 本文件是用于定义侧边intro_logo样式 */
+body{
+    overflow:hidden;
+}
+.logo{
+    position: relative;
+    float: left;
+    /* display: block; */
+    /* font-family: "Microsoft Yahei"; */
+    font-family: "FangSong";
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    display:block;
+    left: 5px;
+}
+figure{
+    position: relative;
+    width: 50px;
+    height: 40px;
+    float: left;
+    overflow: hidden;
+}
+.intro{
+    position: relative;
+    float: left;
+    display: block;
+    
+}
+.intro center{
+    font-family: "FangSong";
+    
+    left: 15%;
+    width: 500px;height: 400px; 
+    /* background-color: #3376C8; */
+    font-size: 25px;
+    font-weight: 300px;
+    border: 0;
+    border-radius: 50px;
+    /* text-align: center;
+    vertical-align: middle;
+    line-height: 38px; */
+    position: absolute;
+/* 	left: 15%;
+    top: 1%; */
+    color: white;
+    transform: translateX(-700px);
+    
+}
+ #header{
+    transition: all 1.5s;
+} 
+h2{
+    transition: all 1.5s;
+} 
+
+
+span{
+    transition: all 1.5s;
+} 
+p{
+    transition: all 1.5s;
+} 
+
+
+
+.intro:hover center{
+    transform: translateX(-100px);
+    transition: all 1.5s;
+
+}

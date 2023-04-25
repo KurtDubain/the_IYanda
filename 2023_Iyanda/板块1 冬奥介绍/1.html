@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style id="snow">/*下雪动效CSS*/
+		.snow-container {
+				position: absolute;
+				height: 1500px;
+				width: 100%;
+				max-width: 100%;
+				top: 0;
+				overflow: hidden;
+				z-index: 2;
+				pointer-events: none;
+						}
+			.snow {
+				display: block;
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				pointer-events: none;
+				-webkit-transform: translate3d(0, -100%, 0);
+				transform: translate3d(0, -100%, 0);
+				-webkit-animation: snow linear infinite;
+				animation: snow linear infinite;
+					}
+			.snow.foreground {
+				background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
+				-webkit-animation-duration: 15s;
+				animation-duration: 15s;
+					}
+				.snow.foreground.layered {
+				-webkit-animation-delay: 7.5s;
+				animation-delay: 7.5s;
+					}
+			.snow.middleground {
+				background-image: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png);
+				-webkit-animation-duration: 20s;
+				animation-duration: 20s;
+					}
+			.snow.middleground.layered {
+				-webkit-animation-delay: 10s;
+				animation-delay: 10s;
+					}
+			.snow.background {
+				background-image: url(https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png);
+				-webkit-animation-duration: 25s;
+				animation-duration: 25s;
+			}
+			.snow.background.layered {
+				-webkit-animation-delay: 12.5s;
+				animation-delay: 12.5s;
+				}
+			@-webkit-keyframes snow {
+				0% {
+						-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				100% {
+					-webkit-transform: translate3d(5%, 100%, 0);
+					transform: translate3d(5%, 100%, 0);
+				}
+			}
+			@keyframes snow {
+				0% {
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+				}
+				100% {
+					-webkit-transform: translate3d(5%, 100%, 0);
+					transform: translate3d(5%, 100%, 0);
+				}
+		}
+	</style>
+	<style type="text/css">
+		html,body {         /*网页背景设计*/
+			margin: 0;
+			/* height: 100%; */
+			width: 100%;
+		}
+		/* 改变超链接形式 */
+		a{
+			text-decoration: none;
+			color: #000000;
+		}
+		a:hover{
+			text-decoration: none;
+		}
+		body {
+			background-color: #3376c8;
+			background-size:100% 100% ;
+			/* background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-position: center center; */
+		}
+		/* 侧边栏跳转按钮设计 */
+		.cebianlan{
+			width: 300px;height: 600px;
+			margin: auto; 
+			float: left;
+			left: 0 ;top: 30%; 
+			background-color: black; 
+			/* display: none; */
+			position: fixed;
+			visibility: hidden;
+		}
+		/* ce bian zhuan 0是首页 1是第一个页面 以此类推 */
+		.cbz0{
+			border: 0;
+			border-radius: 50px;
+			width: 100px;height: 100px;
+			top: 50px;left: 50px;
+			background-color: white;
+			position: absolute;
+			visibility: visible;
+		}
+		.cbz0 div{
+			font-family: "FangSong";
+			text-align: center;
+			vertical-align: middle;
+			line-height: 60px;
+		}
+		.cbz2{
+			border: 0;
+			border-radius: 50px;
+			width: 100px;height: 100px;
+			top: 170px;left: 50px;
+			background-color: white;
+			position: absolute;
+			visibility: visible;
+		}
+		.cbz2 div{
+			font-family: "FangSong";
+			text-align: center;
+			vertical-align: middle;
+			line-height: 60px;
+		}
+		.cbz3{
+			border: 0;
+			border-radius: 50px;
+			width: 100px;height: 100px;
+			top: 300px;left: 50px;
+			background-color: white;
+			position: absolute;
+			visibility: visible;
+		}
+		.cbz3 div{
+			
+			font-family: "FangSong";
+			text-align: center;
+			vertical-align: middle;
+			line-height: 60px;
+		}
+		.cbz0:hover{
+			background-color: blueviolet;
+			transition: background-color ease; 
+			border: 0;
+			border-radius: 10px;
+
+			transition: 2s;
+		}
+		.cbz2:hover{
+			background-color: blueviolet;
+			transition: background-color ease; 
+			border: 0;
+			border-radius: 10px;
+		
+			transition: 2s;
+		}
+		.cbz3:hover{
+			background-color: blueviolet;
+			transition: background-color ease; 
+			border: 0;
+			border-radius: 10px;
+			
+			transition: 2s;
+		}
+		/* 标题格式设置 */
+		.head{
+			border: 0;
+			border-radius: 10px;
+			width: 585px;height: 100px;
+			margin: auto; 
+			position: absolute; 
+			left: 35% ;top: 1%; 
+			background-color: #98bac8; 
+			/* visibility: visible; */
+		}
+		/* 顶部四幅图片父对象 */
+		.photo{
+			border: 0;
+			border-radius: 10px;
+			width: 1280px;height: 200px;
+			margin: auto; 
+			position: absolute; 
+			left: 15% ;top: 20%; 
+			background-color: #98bac8; 
+			
+		}
+		/* 分别是四张图片的格式 */
+		.pitem1, .pitem2, .pitem3, .pitem4{
+			border: 0;
+			border-radius: 10px;
+			width: 250px;height: 150px;
+			visibility: visible;
+			float: left;
+			padding-left: 25px;
+			padding-right: 25px;
+			padding-bottom: 25px;
+			padding-top: 10px;
+			margin: 10px;
+		}
+		/* 第一个介绍模块图片 intrp是介绍板块中的图片 intrt是介绍板块中的文字*/
+		.mokuai11{
+			border: 0;
+			border-radius: 10px;
+			width: 1400px;height: 400px;
+			margin: auto; 
+			position: absolute; 
+			left: 10% ;top: 50%; 
+			background-color: #98bac8;
+		}
+		.mokuai12{
+			border: 0;
+			border-radius: 10px;
+			width: 1400px;height: 400px;
+			margin: auto; 
+			position: absolute; 
+			left: 10% ;top: 900px; 
+			background-color: #98bac8;
+		}
+		/* 第三个模块就是一个底部栏 */
+		.mokuai13{
+			border: 0;
+			border-radius: 10px;
+			width: 100%;height: 50px;
+			margin: auto; 
+			position: absolute; 
+			left: 0 ;top: 1500px; 
+			background-color: #98bac8;
+		}
+		/* introduction picture 1介绍板块图片一 */
+		.intrp1{
+			width: 390px;height: 300px;
+			margin: auto; 
+			position: absolute; 
+			left: 5% ;top: 13%; 
+			background-color: white;
+		}
+		/* text 介绍文字一 */
+		.intrt1{
+			font-family: "FangSong";
+			font-size: 20px;
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 70px;
+			padding-top: 20px;
+			margin: 30px 50px 30px 550px;
+			width: 700px;height: 300px;
+		/* 	border: #7FFFD4 solid 3px; */
+		}
+		
+		.intrp2{
+			width: 300px;height: 300px;
+			margin: auto; 
+			position: absolute; 
+			left: 5% ;top: 13%; 
+			background-color: black;
+		}
+		.intrt2{
+			font-family: "FangSong";
+			font-size: 17px;
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-bottom: 70px;
+			padding-top: 10px;
+			margin: 20px auto 20px auto;
+			width: 350px;height: 270px;
+			/* border: #7FFFD4 solid 3px; */
+		}
+		.intrp3{
+			width: 250px;height: 300px;
+			margin: auto; 
+			position: absolute; 
+			left: 77% ;top: 13%; 
+			background-color: black;
+		}
+	</style>
+	<body>
+		<div class="cebianlan">
+			<div class="cbz0">
+					<div>
+						<a href='../index.html'>
+							
+						<strong><h2>返回首页</h2></strong></a>
+					</div>
+				
+			</div>
+			<div class="cbz2">
+				
+					<div>
+						<a href="../板块2 精彩瞬间/11.html">
+						<strong><h2>精彩瞬间</h2></strong></a>
+					</div>
+				
+			</div>
+			<div class="cbz3">
+				
+					<div>
+						<a href="../板块3 奖牌榜/123.html">
+						<strong><h2>奖牌榜</h2></strong></a>
+					</div>
+				
+			</div>
+		</div>
+		<div class="snow-container">
+			<div class="snow foreground"></div>
+			<div class="snow foreground layered"></div>
+			<div class="snow middleground"></div>
+			<div class="snow middleground layered"></div>
+			<div class="snow background"></div>
+			<div class="snow background layered"></div>
+		</div>
+		<div class ="head" style="font-size: 70px;font-family: 'FangSong';font-weight: bolder";>
+			<center>冬奥知多少</center>
+		</div>
+		<div class="photo">
+			<div class="pitem1" 
+				style="background-image: url(冬奥介绍1.png);background-size: 300px 200px;background-repeat: no-repeat;">
+				
+			</div>
+			<div class="pitem2" 
+				style="background-image: url(冬奥介绍2.png);background-size: 300px 200px;background-repeat: no-repeat;">
+
+			</div>
+			<div class="pitem3" 
+				style="background-image: url(冬奥介绍3.png);background-size: 300px 200px;background-repeat: no-repeat;">
+			</div>
+			<div class="pitem4" 
+				style="background-image: url(冬奥介绍4.png);background-size: 300px 200px;background-repeat: no-repeat;">
+			</div>
+		</div>
+		<div class="mokuai11">
+			<div class="intrp1" 
+				style="background-image: url(冬奥介绍5.png);background-size: 390px 300px;background-repeat: no-repeat;">
+				
+			</div>
+			<div class="intrt1">
+				&nbsp&nbsp&nbsp&nbsp冬季奥林匹克运动会简称为冬季奥运会、冬奥会，是世界规模最大的冬季综合性运动会，每四年举办一届，1994年起与夏季奥林匹克运动会相间举行，冬奥会由国际奥林匹克委员会主办，参与国主要分布在世界各地，包括欧洲、非洲、美洲、亚洲、大洋洲。
+				<br><br>
+				&nbsp&nbsp&nbsp&nbsp2022年北京冬奥会计划于2022年2月4日开幕，在2月20日闭幕。
+				<br><br>
+				&nbsp&nbsp&nbsp&nbsp2022年北京冬奥会设有7个大项，15个分项，109个小项。北京将主办冰上项目，张家口将主办雪上项目，延庆协办张家口举办雪上项目。7个大项分别为滑冰、滑雪、学车、雪橇、冰球、冰上溜石和冬季两项。
+				<br><br>
+				&nbsp&nbsp&nbsp&nbsp中国体育代表团总人数为387人，其中运动员176人，教练员、领队、科医人员等运动队工作人员164人，团部工作人员47人。北京冬奥会是中国体育代表团史上参赛规模最大的一届冬奥会
+			</div>
+		</div>
+		<div class="mokuai12">
+			<div class="intrp2" 
+				style="background-image: url(冬奥介绍6.png);background-size: 309px 300px;background-repeat: no-repeat;">
+			
+			</div>
+			<div class="intrp3" 
+				style="background-image: url(冬奥介绍7.png);background-size: 250px 300px;background-repeat: no-repeat;">
+				
+			</div>
+			<div class="intrt2" >
+				&nbsp&nbsp&nbsp&nbsp“冰”象征纯洁、坚强，是冬奥会的特点。“墩墩”意喻敦厚、敦实、可爱，契合熊猫的整体形象，象征着冬奥会运动员强壮有力的身体、坚韧不拔的意志和鼓舞人心的奥林匹克精神。冰墩墩寓意创造非凡、探索未来，体现了追求卓越、引领时代，以及面向未来的无限可能。
+				<br><br>
+				
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp雪容融设计理念源自春节时期家家张灯结彩的大红灯笼这一体现中国传统文化的器具元素，代表收获、喜庆、温暖和光明，而引入“冰雪”元素，在体现拟人化的设计、凸显吉祥物可爱的同时，更是欢乐喜庆节日气氛和 “瑞雪兆丰年”美好寓意的深度结合，表达了共同参与、共同努力、共同享有的办奥理念。
+			</div>
+		</div>
+		<div class="mokuai13">
+			
+		</div>
+		<!-- 鼠标特效↓ -->
+		<script src="https://zhuzhushop.top/Myblog/js/mouse-click.js"></script>
+		<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+	</body>
+</html>

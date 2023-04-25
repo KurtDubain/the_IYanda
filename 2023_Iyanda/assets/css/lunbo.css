@@ -1,0 +1,41 @@
+.lunBo{/*类选择器*/
+    width: 100%;/*宽度随屏100%*/
+    height: 375px;/*高度为375px*/
+    border: 1px solid  black;/*宽度为1px颜色为黑色*/
+    overflow: hidden;/*隐藏溢出容器的内容且不出现滚动条*/
+    position: relative;/*表示为相对定位*/ 
+}
+ul,li{/*类选择器*/
+    margin: 0;/*外边距为0*/
+    padding: 0;/*内边距为0*/
+    list-style: none;/*设置列表项目样式为不使用项目符号*/
+}
+.tupian{/*类选择器*/
+    width: 400%;/*宽度为适应上级的4倍*/
+    display: flex;/*将对象作为弹性伸缩盒显示*/
+    height: 375px;/*高度为375px*/
+}
+.tupian li{/*类选择器+标签选择器联合使用*/
+    flex:1;/*设置为一个标签占一份*/
+}
+.dian{/*类选择器*/
+    display: flex;/*将对象作为弹性伸缩盒显示*/
+    position:absolute;/*绝对定位*/
+    height: 44px;/*类的高度为44px*/
+    bottom: 10px;/*距离底部10px*/
+    right:14px;/*距离右边14px*/
+}
+.dian li{/*类选择器+标签选择器联合使用*/
+    width: 44px;/*宽度为44px*/
+    height: 44px;/*高度为44px*/
+    border-radius:22px;/*定义边框直径为22px的圆角*/
+    margin-left: 6px;/*左外边距为6px*/
+    display:flex;/*将对象作为弹性伸缩盒显示*/
+    justify-content: center;/*水平居中*/
+    align-items: center;/*垂直居中*/
+    background:#cccccc;/*背景色为灰色*/
+    cursor:pointer;/*鼠标移动到该li上时变为手形*/
+}
+li.xiaoDian{/*标签+类选择器*/
+    background-color: #ffe121;/*背景色改为黄色*/
+}

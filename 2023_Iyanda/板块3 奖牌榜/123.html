@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style id="snow">/*下雪动效CSS*/
+			.snow-container {
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					max-width: 100%;
+					top: 0;
+					overflow: hidden;
+					z-index: 2;
+					pointer-events: none;
+							}
+				.snow {
+					display: block;
+					position: absolute;
+					z-index: 2;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					pointer-events: none;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+					-webkit-animation: snow linear infinite;
+					animation: snow linear infinite;
+						}
+				.snow.foreground {
+					background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
+					-webkit-animation-duration: 15s;
+					animation-duration: 15s;
+						}
+					.snow.foreground.layered {
+					-webkit-animation-delay: 7.5s;
+					animation-delay: 7.5s;
+						}
+				.snow.middleground {
+					background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png");
+					-webkit-animation-duration: 20s;
+					animation-duration: 20s;
+						}
+				.snow.middleground.layered {
+					-webkit-animation-delay: 10s;
+					animation-delay: 10s;
+						}
+				.snow.background {
+					background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png");
+					-webkit-animation-duration: 25s;
+					animation-duration: 25s;
+				}
+				.snow.background.layered {
+					-webkit-animation-delay: 12.5s;
+					animation-delay: 12.5s;
+					}
+				@-webkit-keyframes snow {
+					0% {
+							-webkit-transform: translate3d(0, -100%, 0);
+						transform: translate3d(0, -100%, 0);
+					}
+					100% {
+						-webkit-transform: translate3d(5%, 100%, 0);
+						transform: translate3d(5%, 100%, 0);
+					}
+				}
+				@keyframes snow {
+					0% {
+						-webkit-transform: translate3d(0, -100%, 0);
+						transform: translate3d(0, -100%, 0);
+					}
+					100% {
+						-webkit-transform: translate3d(5%, 100%, 0);
+						transform: translate3d(5%, 100%, 0);
+					}
+			}
+		</style>
+		<style type="text/css">
+			html,body {         /*网页背景设计*/
+				margin: 0;
+				height: 100%;
+				width: 100%;
+			}
+			body {
+				background-image: url(real1.jpg);
+				background-size:100% 100% ;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+		 	a{
+				text-decoration: none;
+				color: #000000;
+			}
+			a:hover{
+				text-decoration: none;
+			} 
+			/* body {
+				background-color: #3376c8;
+				background-size:100% 100% ;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				background-position: center center; 
+				} */
+			.head{
+				border: 0;
+				border-radius: 10px;
+				width: 585px;height: 100px;
+				margin: auto; 
+				position: absolute; 
+				left: 34% ;top: 1%; 
+				background-color: #85BFC8; 
+				/* border:1px solid red;
+				visibility: visible; */
+			}
+				
+			.mokuai31{
+				border: 0;
+				border-radius: 10px;
+				width: 1050px;height: 600px;
+				margin: auto;
+				position: absolute;
+				top: 150px;
+				left: 21%;
+				background-color: #F0FFFF;
+			}
+			.mokuai32{
+				width: 100%;height: 20px;
+				margin: auto; 
+				position: absolute; 
+				left: 0 ;top: 833px; 
+				background-color: #98bac8;
+			}
+		</style>
+		<style type="text/css">
+			.cebianlan{
+				width: 300px;height: 600px;
+				margin: auto; 
+				float: left;
+				left: 0 ;top: 30%; 
+				background-color: black; 
+				/* display: none; */
+				position: fixed;
+				visibility: hidden;
+			}
+			
+			.cbz0{
+				border: 0;
+				border-radius: 50px;
+				width: 100px;height: 100px;
+				top: 50px;left: 50px;
+				background-color: white;
+				position: absolute;
+				visibility: visible;
+			}
+			.cbz0 div{
+				font-family: "FangSong";
+				text-align: center;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+			.cbz1{
+				border: 0;
+				border-radius: 50px;
+				width: 100px;height: 100px;
+				top: 170px;left: 50px;
+				background-color: white;
+				position: absolute;
+				visibility: visible;
+			}
+			.cbz1 div{
+				font-family: "FangSong";
+				text-align: center;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+			.cbz2{
+				border: 0;
+				border-radius: 50px;
+				width: 100px;height: 100px;
+				top: 300px;left: 50px;
+				background-color: white;
+				position: absolute;
+				visibility: visible;
+			}
+			.cbz2 div{
+				
+				font-family: "FangSong";
+				text-align: center;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+			.cbz0:hover{
+				background-color: blueviolet;
+				transition: background-color ease; 
+				border: 0;
+				border-radius: 10px;
+			
+				transition: 2s;
+			}
+			.cbz1:hover{
+				background-color: blueviolet;
+				transition: background-color ease; 
+				border: 0;
+				border-radius: 10px;
+			
+				transition: 2s;
+			}
+			.cbz2:hover{
+				background-color: blueviolet;
+				transition: background-color ease; 
+				border: 0;
+				border-radius: 10px;
+				
+				transition: 2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cebianlan">
+			<div class="cbz0">
+					<div>
+						<a href="../index.html">
+						<strong><h2>返回首页</h2></strong></a>
+					</div>
+				
+			</div>
+			<div class="cbz1">
+				
+					<div>
+						<a href="../板块1 冬奥介绍/1.html">
+						<strong><h2>冬奥介绍</h2></strong></a>
+					</div>
+				
+			</div>
+			<div class="cbz2">
+				
+					<div>
+						<a href="../板块2 精彩瞬间/11.html">
+						<strong><h2>精彩瞬间</h2></strong></a>
+					</div>
+				
+			</div>
+		</div>
+		<div class="snow-container">
+			<div class="snow foreground"></div>
+			<div class="snow foreground layered"></div>
+			<div class="snow middleground"></div>
+			<div class="snow middleground layered"></div>
+			<div class="snow background"></div>
+			<div class="snow background layered"></div>
+		</div>
+		<div class="head" style="font-size: 70px;font-family: 'FangSong';font-weight: bolder";>
+			<center>奖牌榜</center>
+		</div>
+		<div class="mokuai31" style="font-size: 20px;font-family: 'FangSong';font-weight: bold";>
+			<!-- 利用表格特性，列两个表格，使得里面的小表格能够方便的居中 -->
+			<table border=0 style="width:100% ;height:100%">
+			<tr><td align="center" valign="middle">
+			
+			
+			 <table border="1px" cellspacing="0px" cellpadding="5px" style="width: 800px;height: 500px;">
+			 	<tr><td colspan="6"><center>2022北京冬奥会奖牌榜</center></td></tr>
+			 	<tr><td>排名</td><td>国家/地区</td><td style="color: gold;">金牌</td><td style="color: darkgray;">银牌</td><td style="color: chocolate;">铜牌</td><td>总数</td></tr>
+			 	<tr><td>1</td><td>挪威</td><td>16</td><td>8</td><td>13</td><td>37</td></tr>
+			 	<tr><td>2</td><td>德国</td><td>12</td><td>10</td><td>5</td><td>27</td></tr>
+			 	<tr><td>3</td><td>中国</td><td>9</td><td>4</td><td>2</td><td>15</td></tr>
+			 	<tr><td>4</td><td>美国</td><td>8</td><td>10</td><td>7</td><td>25</td></tr>
+			 	<tr><td>5</td><td>瑞典</td><td>8</td><td>5</td><td>5</td><td>18</td></tr>
+			 	<tr><td>6</td><td>荷兰</td><td>8</td><td>5</td><td>4</td><td>17</td></tr>
+			 	<tr><td>7</td><td>奥地利</td><td>7</td><td>7</td><td>4</td><td>18</td></tr>
+			 	<tr><td>8</td><td>瑞士</td><td>7</td><td>2</td><td>5</td><td>14</td></tr>
+			 	<tr><td>9</td><td>俄罗斯奥委会</td><td>6</td><td>12</td><td>14</td><td>32</td></tr>
+			 	<tr><td>10</td><td>法国</td><td>5</td><td>7</td><td>2</td><td>14</td></tr>
+			</table>
+			
+			</td></tr>
+			</table>
+
+		</div>
+		<!-- <div class="mokuai32">
+			
+		</div> -->
+		<!-- 鼠标特效↓ -->
+		<script src="https://zhuzhushop.top/Myblog/js/mouse-click.js"></script>
+		<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+	</body>
+</html>

@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style id="snow">/*下雪动效CSS*/
+			.snow-container {
+					position: absolute;
+					height: 2500px;
+					width: 100%;
+					max-width: 100%;
+					top: 0;
+					overflow: hidden;
+					z-index: 2;
+					pointer-events: none;
+							}
+				.snow {
+					display: block;
+					position: absolute;
+					z-index: 2;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					pointer-events: none;
+					-webkit-transform: translate3d(0, -100%, 0);
+					transform: translate3d(0, -100%, 0);
+					-webkit-animation: snow linear infinite;
+					animation: snow linear infinite;
+						}
+				.snow.foreground {
+					background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-large-075d267ecbc42e3564c8ed43516dd557.png");
+					-webkit-animation-duration: 30s;
+					animation-duration: 30
+					s;
+						}
+					.snow.foreground.layered {
+					-webkit-animation-delay: 15s;
+					animation-delay: 15s;
+						}
+				.snow.middleground {
+					background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png");
+					-webkit-animation-duration: 40s;
+					animation-duration: 40s;
+						}
+				.snow.middleground.layered {
+					-webkit-animation-delay: 20s;
+					animation-delay: 20s;
+						}
+				.snow.background {
+					background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-small-1ecd03b1fce08c24e064ff8c0a72c519.png");
+					-webkit-animation-duration: 50s;
+					animation-duration: 50s;
+				}
+				.snow.background.layered {
+					-webkit-animation-delay: 12.5s;
+					animation-delay: 12.5s;
+					}
+				@-webkit-keyframes snow {
+					0% {
+							-webkit-transform: translate3d(0, -100%, 0);
+						transform: translate3d(0, -100%, 0);
+					}
+					100% {
+						-webkit-transform: translate3d(5%, 100%, 0);
+						transform: translate3d(5%, 100%, 0);
+					}
+				}
+				@keyframes snow {
+					0% {
+						-webkit-transform: translate3d(0, -100%, 0);
+						transform: translate3d(0, -100%, 0);
+					}
+					100% {
+						-webkit-transform: translate3d(5%, 100%, 0);
+						transform: translate3d(5%, 100%, 0);
+					}
+			}
+		</style>
+		<style type="text/css">
+			html,body {         /*网页背景设计*/
+				margin: 0;
+				/* height: 100%; */
+				width: 100%;
+			}
+			a{
+				text-decoration: none;
+				color: #000000;
+			}
+			a:hover{
+				text-decoration: none;
+			}
+			body {
+				background-color: #3376c8;
+				background-size:100% 100% ;
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				background-position: center center; 
+				}
+				/* 页面大标题设计 */
+			.head{
+				border: 0;
+				border-radius: 10px;
+				width: 585px;height: 100px;
+				margin: auto; 
+				position: absolute; 
+				left: 35% ;top: 1%; 
+				background-color: #85BFC8; 
+				/* border:1px solid red;
+				visibility: visible; */
+			}
+			/* 模块21和22分别是两个展示图片的模块（父对象） */
+			.mokuai21{
+				border: 0;
+				border-radius: 10px;
+				width: 1200px;height: 1000px;
+				margin: auto; 
+				position: absolute; 
+				left: 15% ;top: 200px; 
+				background-color: #98bac8; 
+				/* visibility: visible; */
+			}
+			.mokuai22{
+				border: 0;
+				border-radius: 10px;
+				width: 1200px;height: 950px;
+				margin: auto; 
+				position: absolute; 
+				left: 15% ;top: 1300px; 
+				background-color: #98bac8; 
+				/* visibility: visible; */
+			}
+			/* 模块23是底部栏 */
+			.mokuai23{
+				width: 100%;height: 50px;
+				margin: auto; 
+				position: absolute; 
+				left: 0 ;top: 2500px; 
+				background-color: #98bac8;
+			}
+			/* h是模块标题，m是模块内部图文部分的模块 */
+			.h21{
+				border: 0;
+				border-radius: 10px;
+				width: 400px;height: 90px;
+				margin-left: auto;
+				position: absolute;
+				left: 400px;top: 50px;
+				border: #19a034 solid 10px;
+				
+			}
+			.h22{
+				border: 0;
+				border-radius: 10px;
+				width: 400px;height: 90px;
+				margin-left: auto;
+				position: absolute;
+				left: 400px;top: 50px;
+				border: #19a034 solid 10px;
+				/* background-color: #19a034; */
+			}
+			.m21{
+				border: 0;
+				border-radius: 10px;
+				
+				width: 1000px;height: 700px;
+				margin: auto;
+				position: absolute;
+				top: 150px;left: 100px;
+			}
+			.m22{
+				border: 0;
+				border-radius: 10px;
+				
+				width: 1000px;height: 750px;
+				margin: auto;
+				position: absolute;
+				top: 175px;left: 100px;
+				/* border:1px solid red; */
+				bottom: 10px;
+			}
+		/* 	.m21-1{
+				width: 40%;height: 300px;
+				 position: absolute;
+				left: 20px;top: 150px; 
+				background-color: #FFFAFA;
+			} */
+		/* 	.m22-1{
+				width: 270px;height: 300px;
+				position: absolute;
+				left: 20px;top: 150px; 
+				background-color: #FFFAFA;
+			} */
+			/* 以下分别是两个模块图片位置的设置 */
+			.m21-1, .m21-2, .m21-3, .m21-4{
+				
+				width: 40%;height: 300px;
+				background-color: #FFFAFA;
+				top: 150px;
+				margin: 3.125rem;
+				float: left;
+			}
+			.m22-1, .m22-2, .m22-3, .m22-4, .m22-5, .m22-6{
+				width: 270px;height: 200px;
+				background-color: #FFFAFA;
+				top: 100px;
+				margin: 80px 30px 30px 30px;
+				float: left;
+			}
+			.t21-1, .t21-2, .t21-3, .t21-4{
+				/* position: absolute;
+				left: 60px;top: 350px; */
+				font-family: "FangSong";
+				font-size: 17px;
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				/* margin: 20px auto 20px auto; */
+				width: 350px;height: 70px;
+				/* border: #7FFFD4 solid 3px; */
+				}
+			.t22-1, .t22-2, .t22-3, .t22-4, .t22-5, .t22-6{
+				font-family: "FangSong";
+				font-size: 17px;
+				padding-left: 10px;
+				padding-right: 10px;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				/* margin: 20px auto 20px auto; */
+				width: 250px;height: 70px;
+				/* border: #7FFFD4 solid 3px; */
+			}
+			.t21-1{
+				position: absolute;
+				left: 60px;top: 350px;
+				
+			}
+			.t21-2{
+				position: absolute;
+				left: 560px;top: 350px;
+			}
+				
+			.t21-3{
+				position: absolute;
+				left: 60px;top: 750px;
+			}
+			.t21-4{
+				position: absolute;
+				left: 560px;top: 750px;
+			}
+			.t22-1{
+				position: absolute;
+				left: 30px;top: 290px;
+			}
+			.t22-2{
+				position: absolute;
+				left: 360px;top: 290px;
+			}
+			.t22-3{
+				position: absolute;
+				left: 690px;top: 290px;
+			}
+			.t22-4{
+				position: absolute;
+				left: 30px;top: 620px;
+			}	
+			.t22-5{
+				position: absolute;
+				left: 360px;top: 620px;
+			}
+			.t22-6{
+				position: absolute;
+				left: 690px;top: 620px;
+			}
+		</style>
+		<style type="text/css">
+			.cebianlan{
+				width: 300px;height: 600px;
+				margin: auto; 
+				float: left;
+				left: 0 ;top: 30%; 
+				background-color: black; 
+				/* display: none; */
+				position: fixed;
+				visibility: hidden;
+			}
+			
+			.cbz0{
+				border: 0;
+				border-radius: 50px;
+				width: 100px;height: 100px;
+				top: 50px;left: 50px;
+				background-color: white;
+				position: absolute;
+				visibility: visible;
+			}
+			.cbz0 div{
+				font-family: "FangSong";
+				text-align: center;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+			.cbz1{
+				border: 0;
+				border-radius: 50px;
+				width: 100px;height: 100px;
+				top: 170px;left: 50px;
+				background-color: white;
+				position: absolute;
+				visibility: visible;
+			}
+			.cbz1 div{
+				font-family: "FangSong";
+				text-align: center;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+			.cbz3{
+				border: 0;
+				border-radius: 50px;
+				width: 100px;height: 100px;
+				top: 300px;left: 50px;
+				background-color: white;
+				position: absolute;
+				visibility: visible;
+			}
+			.cbz3 div{
+				
+				font-family: "FangSong";
+				text-align: center;
+				vertical-align: middle;
+				line-height: 60px;
+			}
+			.cbz0:hover{
+				background-color: blueviolet;
+				transition: background-color ease; 
+				border: 0;
+				border-radius: 10px;
+			
+				transition: 2s;
+			}
+			.cbz1:hover{
+				background-color: blueviolet;
+				transition: background-color ease; 
+				border: 0;
+				border-radius: 10px;
+			
+				transition: 2s;
+			}
+			.cbz3:hover{
+				background-color: blueviolet;
+				transition: background-color ease; 
+				border: 0;
+				border-radius: 10px;
+				
+				transition: 2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="cebianlan">
+			<div class="cbz0">
+					<div>
+						<a href="../index.html">
+						<strong><h2>返回首页</h2></strong></a>
+					</div>
+				
+			</div>
+			<div class="cbz1">
+				
+					<div>
+						<a href="../板块1 冬奥介绍/1.html">
+						<strong><h2>冬奥介绍</h2></strong></a>
+					</div>
+				
+			</div>
+			<div class="cbz3">
+				
+					<div>
+						<a href="../板块3 奖牌榜/123.html">
+						<strong><h2>奖牌榜</h2></strong></a>
+					</div>
+				
+			</div>
+		</div>
+		<!-- 下雪特效HTML -->
+		<div class="snow-container">
+			<div class="snow foreground"></div>
+			<div class="snow foreground layered"></div>
+			<div class="snow middleground"></div>
+			<div class="snow middleground layered"></div>
+			<div class="snow background"></div>
+			<div class="snow background layered"></div>
+		</div>
+		<!-- 题目 -->
+		<div class="head" style="font-size: 70px;font-family: 'FangSong';font-weight: bolder";>
+		<center>精彩瞬间</center>
+		</div>
+		<!-- 分别是三个模块的部分 -->
+		<div class="mokuai21" >
+			<div class="h21" style="font-size: 50px;font-family: 'FangSong';font-weight: bold";>
+				<center>开幕式风采</center>
+			</div>
+			<div class="m21">
+					<div class="m21-1" style="background-image: url(精彩瞬间1.png);background-size: 400px 300px;background-repeat: no-repeat;">
+				
+			        </div>
+			        <div class="m21-2" style="background-image: url(精彩瞬间2.png);background-size: 400px 300px;background-repeat: no-repeat;">
+				
+		        	</div>
+					<div class="m21-3" style="background-image: url(精彩瞬间3.png);background-size: 400px 300px;background-repeat: no-repeat;">
+				
+					</div>
+					<div class="m21-4" style="background-image: url(精彩瞬间4.png);background-size: 400px 300px;background-repeat: no-repeat;">
+				
+					</div>
+					<div class="t21-1">
+						首个表演《立春》，绿色的春苗，象征着春天的到来。
+					</div>
+					<div class="t21-2">
+						国旗由12位小朋友展开，再经由176名普通人手手相传
+					</div>
+					<div class="t21-3">
+						44名来自大山的孩子以纯净、空灵的天籁之音，用希腊语完美演唱了奥运会会歌《奥林匹克圣歌》
+					</div>
+					<div class="t21-4">
+						点火采用的“微火”方式，前所未有。小小火苗传达低碳环保理念。
+					</div>
+			</div>
+		
+		</div>
+		<div class="mokuai22">
+			<div class="h22" style="font-size: 50px;font-family: 'FangSong';font-weight: bold";>
+				<center>运动员风采展示</center>
+			</div>
+			<div class="m22">
+				<div class="m22-1" style="background-image: url(精彩瞬间5.png);background-size: 290px 200px;background-repeat: no-repeat;">
+					
+				</div>
+				<div class="m22-2" style="background-image: url(精彩瞬间6.png);background-size: 290px 200px;background-repeat: no-repeat;">
+					
+				</div>
+				<div class="m22-3" style="background-image: url(精彩瞬间7.png);background-size: 290px 200px;background-repeat: no-repeat;">
+					
+				</div>
+				<div class="m22-4" style="background-image: url(精彩瞬间8.png);background-size: 290px 200px;background-repeat: no-repeat;">
+					
+				</div>
+				<div class="m22-5" style="background-image: url(精彩瞬间9.png);background-size: 290px 200px;background-repeat: no-repeat;">
+						
+				</div>
+				<div class="m22-6" style="background-image: url(精彩瞬间10.png);background-size: 290px 200px;background-repeat: no-repeat;">
+					
+				</div>
+				<div class="t22-1">
+					本届冬奥会首金为来自挪威的选手约海于格在越野滑雪中取得。图为约海于格高举“冰墩墩”欢呼
+				</div>
+				<div class="t22-2">
+					5日晚，中国队在短道速滑混合团体接力赛中斩获首金
+				</div>
+				<div class="t22-3">
+					北京冬奥会的冰壶混双循环赛中中国组合凌智/范苏圆参赛	
+				</div>
+				<div class="t22-4">
+					谷爱凌第三跳挑战从未做出的超高难度动作成功，上演超级大逆转，奇迹般夺冠。
+				</div>
+				<div class="t22-5">
+					中国选手谷爱凌和瑞士选手玛蒂尔德·格雷莫德在比赛后安慰法国选手泰丝·勒德。友谊比冠军更重要，温情比金牌更温暖。
+				</div>
+				<div class="t22-6">
+					中国速度滑冰创造了新的历史，高亭宇在男子500米速度滑冰勇夺金牌
+				</div>
+			</div>
+			
+		</div>
+		<div class="mokuai23">
+			
+		</div>
+		<!-- 鼠标特效↓ -->
+		<script src="https://zhuzhushop.top/Myblog/js/mouse-click.js"></script>
+		<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+	</body>
+</html>
