@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>十罐雪碧</title>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="images/YanZi.ico" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="keywords" content="计算机科学与技术，燕山大学">
+		<meta name="description" content="我与计科，燕大让我们相遇">
+		<meta name="author" content="十罐雪碧">
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="assets/css/snow.css">
+		<link rel="stylesheet" href="assets/css/logo.css">
+		<link rel="stylesheet" href="assets/css/music_col.css">
+	</head>
+	<style>
+		
+	</style>
+
+	<body>
+		<!-- 下雪动效 -->
+		<div class="snow-container">
+			<div id="snow1" class="snow"></div>
+			<!-- <div class="snow foreground layered"></div> -->
+			<div id="snow2" class="snow"></div>
+			<!-- <div class="snow middleground layered"></div> -->
+			<div id="snow3" class="snow"></div>
+			<!-- <div class="snow background layered"></div> -->
+		</div>
+			<!-- 团队标题  -->
+			<header id="header">
+				<figcaption class="intro" style="z-index: 2;">
+				<!-- <span style="margin-top:23px; padding-left:10px;margin-top:8px;display:block;float:left;"></span> -->
+				<div class="logo" style="font-size: 40px;font-weight: bold;display:block;left: 5px;">
+				十罐雪碧
+				</div>
+					<p><center><span>小队成员：</span></center></p><br>
+					<p><center><span>杜钇澎</span></center></p><br>
+					<p><center><span>邱世超</span></center></p><br>
+					
+				</figcaption>
+				<a href="#menu"><span>菜单</span></a>
+				<div id="music">
+					<audio id="controllers" controls autoplay src="./music/smells.mp3"></audio>
+					<div id="music_name">Smells Like Teen Spirit - Nirvana</div>
+					<div class="pn_btn">
+						<button id="previous_song"></button>
+						<button id="next_song"></button>
+					</div>
+					<button id="downmusic"></button>
+				</div>
+			</header>
+			<!-- 音乐控制 -->
+			
+
+		<!-- 导航栏 -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="#banner">首页</a></li>
+					<li><a href="#one">主要课程介绍</a></li>
+					<li><a href="#two">全部课程一览</a></li>
+					<li><a href="#three">团队介绍</a></li>
+					<li><a href="#four">学校官网</a></li>
+					<li><a href="./html/readme.html" target="_blank">了解更多</a></li>
+				</ul>
+				<button id="local_remember" aria-pressed="false"></button>
+			</nav>
+
+		<!-- 首页banner -->
+
+			<section id="banner" class="bg-img" data-bg="shouye.jpg">
+				<div class="inner">
+					<header>
+						<h1>燕大·我的计科</h1>
+					</header>
+				</div>
+				<a href="#one" class="more" title="下一页"></a>
+			</section>
+
+		<!-- 主要课程介绍 -->
+			<section id="one" class="wrapper post bg-img" data-bg="tushu.jpg">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>主要课程</h2>
+							<p></p>
+						</header>
+						<div class="content">
+							<p>计科专业课：</p>
+							<p>数据结构、计算机操作系统、编译原理等</p>
+						</div>
+						<footer>
+							<a href="./html/imp_course.html" target="_blank" class="button alt">详细介绍</a>
+						</footer>
+					</article>
+				</div>
+				<a href="#two" class="more" title="下一页"></a>
+			</section>
+
+		<!-- 全部课程一览 -->
+			<section id="two" class="wrapper post bg-img" data-bg="quanbu.jpg">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>全部课程</h2>
+							<p></p>
+						</header>
+						<div class="content">
+							<p>展示计算机科学与技术专业(20级)的主要课程和对应学分</p>
+						</div>
+						<footer>
+							<a href="./html/intro_all.html" target="_blank" class="button alt">概览查看</a>
+						</footer>
+					</article>
+				</div>
+				<a href="#three" class="more" title="下一页"></a>
+			</section>
+
+		<!-- 团队介绍 -->
+			<section id="three" class="wrapper post bg-img" data-bg="duyipeng.jpg">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>团队介绍</h2>
+							<p></p>
+						</header>
+						<div class="content">
+							<p>十罐雪碧，少年心气</p>
+						</div>
+						<footer>
+							<a href="./html/team.html" target="_blank" class="button alt">了解小队</a>
+						</footer>
+					</article>
+				</div>
+				<a href="#four" class="more" title="下一页"></a>
+			</section>
+
+		<!-- 学校官网 -->
+			<section id="four" class="wrapper post bg-img" data-bg="yanda2.jpg">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>我 I Yanda</h2>
+							<p></p>
+						</header>
+						<div class="content">
+							<p>燕山大学官方网站</p>
+						</div>
+						<footer>
+							<!-- 因为涉及到网络安全问题，这里的rel设置成了noopener而不是默认值 -->
+							<a href="https://www.ysu.edu.cn/" rel="noopener" target="_blank" class="button alt">走进燕大</a>
+						</footer>
+					</article>
+				</div>
+				<a href="#footer" class="more" title="下一页">更多</a>
+			</section>
+
+		<!-- 底部部分 -->
+			<footer id="footer">
+				<div class="inner">
+
+					<h2>欢迎留言</h2>
+<!-- 这个表单提交的功能暂时不能实现，只是做了一个框架 -->
+					<form action="fault.html" method="post">
+
+						<div class="field half first">
+							<label for="name">姓名</label>
+							<input name="name" id="name" type="text" placeholder="姓名">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email">
+						</div>
+						<div class="field">
+							<label for="message">留言</label>
+							<textarea name="message" id="message" rows="6" placeholder="说点什么~"></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="发送" class="button alt" type="submit"></li>
+						</ul>
+					</form>
+
+					<ul class="icons">
+						<li><a href="http://connect.qq.com/widget/shareqq/index.html?title=qqhaoyou&url=http://zwb.qmby.top&desc=还不错哦&pics=&site=反卷大队" class="icon round fa-qq"><span class="label">QQ</span></a></li>
+						<li><a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://zwb.qmby.top" class="icon round fa-weixin"><span class="label">微信</span></a></li>
+					</ul>
+				  <div class="copyright">
+						&copy; Design: <a href="没有上线" style="display:inline-block;text-decoration:none;">十罐雪碧</a>.<br>
+					  </div>
+				</div>
+			</footer>
+
+			<!-- js文件引入 -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/index.js"></script>
+			<script src="assets/js/music.js"></script>
+			<script src="assets/js/fontstyle.js"></script>
+			<canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>	
+	</body>
+</html>
