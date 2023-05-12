@@ -1,0 +1,69 @@
+/* 这里是另一种文字图片排版方式 */
+.innerimg{
+    display: grid;
+    overflow: hidden;
+    height: 80%;
+    width: 30%;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    object-fit: cover;
+}
+
+
+.innerimg img{
+    object-fit: cover;
+    max-width: 100%;  
+    max-height: 100%;     
+}
+
+.course_intro{
+    display: grid;
+    width: auto;
+    height: auto;
+}
+
+.course_intro p{
+    position: relative;
+    left: 20%;
+}
+/* 原计划在个人介绍的部分增加一些动画，但是未能成功实现 */
+.moveimg{
+    display: grid;
+    overflow: hidden;
+    height: 20%;
+    width: 10%;
+    position: absolute;
+    left: 0%;
+    top: 15%;
+    object-fit: cover;
+    animation:torighter 3s linear infinite;
+    -webkit-animation: torighter 3s linear infinite;
+}
+
+.moveimg img{
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    animation:torighter 3s linear infinite;
+    -webkit-animation: torighter 3s linear infinite;
+}
+
+.toright{
+    position: relative;
+    left: 100px;
+    animation:torighter 3s linear infinite;
+    -webkit-animation: torighter 3s linear infinite;
+   
+}
+
+
+@keyframes torighter{
+    0%{right: 0px;}
+    100%{right: 1000px;}
+}
+@-webkit-keyframes torighter /* Safari 与 Chrome */
+{
+    0%{right: 0px;}
+    100%{right: 1000px;}
+}

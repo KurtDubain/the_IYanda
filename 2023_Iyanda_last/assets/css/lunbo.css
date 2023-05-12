@@ -1,0 +1,63 @@
+/* 定义了轮播图的样式 */
+body{
+    margin: 0;
+    padding: 0px;
+}
+#carousel{
+    margin: auto; /* 居中 */
+    width: 600px; /* 设置宽度 */
+    position: relative; /* 相对定位 */
+    overflow: hidden; /* 超出隐藏 */
+}
+#carousel img{
+    width: 600px; /* 设定大小 按比例缩放 */
+}
+#carousel > ul {
+    display: flex; /* 图片处理为一行 */
+    position: absolute; /* 设置绝对定位，实现相对于#carousel的绝对定位 */
+}
+#carousel > ul,
+#carousel > ul > li{
+    padding: 0;
+    margin: 0;
+    list-style:none; 
+}
+
+/* 控制按钮的样式 */
+#leftArrow,
+#rightArrow{
+    position: absolute;
+    left: 5px;
+    top: 43%;
+    width: 25px;
+    height: 30px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    font-size: 20px;
+    cursor: pointer;
+}
+#rightArrow{
+    left: auto;
+    right: 5px;
+}
+#sliderBtn{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.unitBtn{
+    width: 10px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.active{
+    background-color: #000000;
+}

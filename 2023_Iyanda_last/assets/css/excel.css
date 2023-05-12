@@ -1,0 +1,56 @@
+/* 表格的css样式 */
+.excel table{
+    width: 100%;
+    border-collapse: collapse;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-right:1px solid rgb(0, 0, 0) ;
+
+}
+
+.excel table caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.excel th{
+    text-align: center;
+    padding: 20px 0;
+
+}
+.excel td{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.excel_cut{
+    border-left: 1px solid rgb(61, 9, 9);
+    font-weight: 700;
+}
+.excel table thead tr{
+    background-color: #0b7272;
+    color: #fff;
+}
+
+.excel table tbody tr{
+    background-color: rgb(184, 184, 184);
+}
+
+.excel table tbody tr:nth-child(odd){
+    background-color: rgb(134, 133, 133);
+}
+
+.excel table tbody tr:hover{
+    background-color: #ccc;
+}
+
+.excel table tbody tr td:first-child{
+    font-weight: 700;
+}
+
+
+
+.excel table tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}

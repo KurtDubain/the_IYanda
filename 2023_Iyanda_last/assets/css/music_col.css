@@ -1,0 +1,81 @@
+/* 定义了音乐样式的css */
+#music{
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    height: 150%;
+    width: 16%;
+    z-index: 12;
+    opacity: 80%;
+    display: grid;
+    transition:transform 1s ease;
+}
+/* 上一首下一首按钮的设置 */
+#controllers{
+    position: relative;
+    /* top: -70%; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+
+}
+.pn_btn{
+    display: flex;
+    opacity: 80%;
+}
+#previous_song{
+    background: url('../../assets/fonts/previoussong.svg') no-repeat center center;
+    background-size: contain;
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 0em;
+    border-bottom-left-radius: 10em;
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
+}
+#next_song{
+    background: url('../../assets/fonts/nextsong.svg') no-repeat center center;
+    background-size: contain;
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 10em;
+    border-top-left-radius: 0em;
+    border-bottom-left-radius: 0em;
+}
+
+#previous_song:hover,#next_song:hover{
+    background-color: rgb(109, 109, 109);
+    transition: all 0.5s;
+}
+#downmusic{
+    background: url('../../assets/fonts/downmusic.svg') no-repeat center center;
+    background-size: contain;
+    left: auto;
+    
+
+}
+/* 音乐名称的设计 */
+#music_name{
+    border-top-right-radius: 10em;
+    border-bottom-right-radius: 0em;
+    border-top-left-radius: 10em;
+    border-bottom-left-radius: 0em;
+    background-color: rgb(255, 255, 255);
+    height: 38px;
+    opacity: 80%;
+    background-size: contain;
+    text-align: center;
+    color: black;
+    font-weight: 800;
+}
+
+
+.movedown{
+    transform: translateY(+70%);
+}
+.movedown{
+    transform: translateY(-70%);
+}
